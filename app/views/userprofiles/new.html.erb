@@ -3,12 +3,12 @@
 <%= form_tag "/userprofiles", "method" => "post" %>
 
   <p>
-    <%= label_tag "full_name", "What is the Applicant's name?" %>
+    <%= label_tag "full_name", "What is the Applicant's name? (Enter a unique name)" %>
     <%= text_field_tag "full_name" %>
   </p>
 
   <p>
-    <%= label_tag "url", "Do you have a link to a photo?" %>
+    <%= label_tag "url", "Do you have a link to a photo? (Enter a unique link)" %>
     <%= text_field_tag "url" %>
   </p>
 
@@ -20,7 +20,7 @@
 
 
 
-<%#
+<%# Ignore the code below: For backup
 <%= form_tag "/userpreferences", "method" => "post" %>
 
 

@@ -3,7 +3,7 @@
 
 <div class="row">
 
-    <div class="col-md-5">
+  <div class="col-md-5">
     <h3> <b> <%= apartmenttype["title"] %> apartment</h3> </b>
       <ul> <h4> Rent: $<%= apartmenttype["rent"] %> per month
 
@@ -17,34 +17,28 @@
       </ul>
     
       <ul>
-    <% studentdirector = Studentdirector.find_by("id" => apartmenttype["studentdirector_id"]) %>
-    <% if studentdirector.present? %>
-      <h4>Student director is <%= link_to studentdirector["name"], "/studentdirectors/#{studentdirector["id"]}" %></h4>
-    <% end %>
+        <% studentdirector = Studentdirector.find_by("id" => apartmenttype["studentdirector_id"]) %>
+        <% if studentdirector.present? %>
+          <h4>Student director is <%= link_to studentdirector["name"], "/studentdirectors/#{studentdirector["id"]}" %></h4>
+        <% end %>
       </ul>
-</div>
-
-
-
-<div class="col-md-7">
-    <%= image_tag(apartmenttype["poster_url"],"width"=> 240) %>
   </div>
 
+  <div class="col-md-7">
+    <%= image_tag(apartmenttype["poster_url"],"width"=> 240) %>
+  </div>
 </div>  
-<hr>
 
+<hr>
 
 <div class="row">
   <div class="col-md-10">
     <h3> <b> Applicants who have expressed interest</h3></b>
 
     <% userpreferences = Userpreference.where("apartmenttype_id" => apartmenttype["id"]) %>
-
-    
+   
      <% userpreferences.each do |userpreference| %>
-        
-            
-            <% userprofile = Userprofile.find_by("id" => userpreference["userprofile_id"]) %>
+        <% userprofile = Userprofile.find_by("id" => userpreference["userprofile_id"]) %>
         
         <% if userprofile.present? %>
           <h4> <ul>
@@ -53,8 +47,7 @@
             <%= userpreference["preference"] %>"
           </ul> </h4>
         <% end %>      
-    
-  
+     
     <% end %>
     </ul>
 
@@ -65,27 +58,19 @@
     <% if Review.where("apartmenttype_id" => apartmenttype["id"]).count == 0 %>
       <p>You are the first to write a review!</p>
     <% end %>
-
    
     <% Review.where("apartmenttype_id" => apartmenttype["id"]).each do |review| %>
       <% the_user = User.find_by("id" => review["user_id"]) %>
-      
         
-          <h4> <ul> 
-            <% if the_user.present? %>
-              Rating: <%= review.rating %>, Comment:
-          <% end %>
-        
+      <h4> <ul> 
         <% if review.present? %>
           <%= review.content %>
         <% else %> has not provided comments
-         <% end %>
+          <% end %>
 
-          </h4> </ul> 
-      
+      </h4> </ul> 
 
     <% end %>
-
 
   </div>
 </div>
@@ -108,7 +93,6 @@
         </p>
       </div>
 
-      
     <% end %>
 </p>
 

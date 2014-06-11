@@ -80,7 +80,12 @@ Imdb::Application.routes.draw do
   # --- Delete
   delete "/userprofiles/:id" => 'userprofiles#destroy'
 
+# Resource: Userpreferences
 
+  # --- Create
+  get "/userpreferences/new" => 'userpreferences#new'
+  post "/userpreferences" => 'userprofiles#userpreferenceupdate'
+  post "/userpreferences/new" => 'userprofiles#userpreferenceupdate'
 
   
    # Resource: Reviews

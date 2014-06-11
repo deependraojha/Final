@@ -19,9 +19,9 @@
 .aside { margin-top: 36px; }
 .movie { margin-bottom: 36px; }
 
-img { border: 5px solid #CCC; box-shadow: 4px 4px 4px gray; }
+img { border: 5px solid #CCC; box-shadow: 4px 4px 4px black; }
 
-h1 { color: blue; }
+h1 { color: blue; font-family: Times;}
 h2 { color: black;}
 
 

@@ -20,4 +20,4 @@ class SessionsController < ApplicationController
     redirect_to "/", :notice => "Bye, Hope to see you again!"
   end
 
- end
+end

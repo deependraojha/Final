@@ -1,7 +1,5 @@
 class StudentdirectorsController < ApplicationController
 
-  # Try commenting out or removing this code entirely
-  # to see what would happen.
   def destroy
     studentdirector = Studentdirector.find_by("id" => params["id"])
     studentdirector.delete

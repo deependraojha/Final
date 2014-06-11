@@ -1,17 +1,15 @@
+  <ul> 
+  </ul>  
 
-
-    <ul> 
-    </ul>  
   <div class="col-md-30">
-  <h2>List of apartment types</h2>
+    <h2>List of apartment types</h2>
 
-        </div>
+  </div>
   
         <div class="col-md-8">
+          <% Apartmenttype.read.order("title desc").each do |apartmenttype| %>
 
-        <% Apartmenttype.read.order("title desc").each do |apartmenttype| %>
-
-      <div class="row apartmenttype">
+        <div class="row apartmenttype">
 
         <div class="col-md-8">
           <h3>
@@ -31,16 +29,13 @@
             <p>          </p>
           
           <% end %>
-        
-
-        
+                
         </div>
 
       </div>
     
-    <% end %>
+      <% end %>
   
-
   <hr>
     <div class="col-md-6 pull right">
        <%= link_to "Click to add a New Apartment type", "/apartmenttypes/new", "class" => 'btn btn-lg btn-primary' %>
